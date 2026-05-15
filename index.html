@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
   <title>طاحون الخير والبركة | طحن الحبوب في ريمة</title>
   <meta name="description" content="طاحون الخير والبركة لصاحبه خالد روبع في محافظة ريمة، مديرية السلفية، عزلة الدومر، وادي صيحان، منطقة الكمب. طحن البر والذرة وجميع أنواع الحبوب مع خدمة توصيل للمنازل." />
   <meta name="keywords" content="خالد روبع, طاحون الخير والبركة, طاحون الخير والبركة لصاحبه خالد روبع, طاحون بريمة, طاحون في ريمة, طاحون ريمة, طحن البر في ريمة, طحن الذرة في ريمة, طحن الحبوب في ريمة, طاحون السلفية, طاحون الدومر, وادي صيحان, منطقة الكمب, طحن الحبوب اليمن, طاحون خالد روبع" />
@@ -15,7 +17,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://khald.vercel.app/" />
   <meta property="og:locale" content="ar_YE" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1200&q=85" />
+  <meta property="og:image" content="https://khald.vercel.app/logo.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="طاحون الخير والبركة لصاحبه خالد روبع" />
@@ -90,14 +92,23 @@
     }
 
     .brand-mark {
-      width: 48px;
-      height: 48px;
+      width: 54px;
+      height: 54px;
       border-radius: 50%;
-      background:
-        linear-gradient(135deg, rgba(230,183,90,0.95), rgba(122,71,31,0.95)),
-        url("https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=300&q=80") center/cover;
+      overflow: hidden;
+      background: #fffaf0;
       box-shadow: 0 12px 30px rgba(122, 71, 31, 0.26);
-      border: 2px solid rgba(255,255,255,0.85);
+      border: 2px solid rgba(255,255,255,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 54px;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .brand-name {
@@ -160,7 +171,6 @@
       overflow: hidden;
       background:
         linear-gradient(90deg, rgba(17,10,5,0.92) 0%, rgba(34,20,10,0.82) 42%, rgba(34,20,10,0.40) 100%),
-        url("LOGO-HERE.png") center/contain no-repeat,
         url("https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=2200&q=85") center/cover;
     }
 
@@ -619,7 +629,7 @@
       .announcement { font-size: 12px; }
       .brand small { display: block; font-size: 11px; }
       .brand-name { line-height: 1.2; }
-      .brand-mark { width: 42px; height: 42px; }
+      .brand-mark { width: 44px; height: 44px; flex-basis: 44px; }
       .nav .btn { display: none; }
       .hero { background-position: 62% center; }
       .hero::after { height: 120px; }
@@ -671,7 +681,9 @@
   <header>
     <nav class="nav">
       <a href="#home" class="brand" aria-label="طاحون الخير والبركة">
-        <span class="brand-mark"></span>
+        <span class="brand-mark">
+          <img src="logo.png" alt="شعار طاحون الخير والبركة" />
+        </span>
         <span class="brand-name">
           <span>طاحون الخير والبركة</span>
           <small>لصاحبه خالد روبع</small>
