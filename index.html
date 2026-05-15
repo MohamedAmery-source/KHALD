@@ -85,12 +85,19 @@
       border: 2px solid rgba(255,255,255,0.85);
     }
 
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+
     .brand small {
       display: block;
-      color: var(--muted);
+      color: var(--brown);
       font-size: 12px;
-      font-weight: 700;
-      margin-top: -4px;
+      font-weight: 800;
+      margin-top: 3px;
+      opacity: 0.9;
     }
 
     .nav-links {
@@ -594,7 +601,8 @@
 
     @media (max-width: 560px) {
       .announcement { font-size: 12px; }
-      .brand small { display: none; }
+      .brand small { display: block; font-size: 11px; }
+      .brand-name { line-height: 1.2; }
       .brand-mark { width: 42px; height: 42px; }
       .nav .btn { display: none; }
       .hero { background-position: 62% center; }
@@ -617,7 +625,10 @@
     <nav class="nav">
       <a href="#home" class="brand" aria-label="طاحون الخير والبركة">
         <span class="brand-mark"></span>
-        <span>طاحون الخير والبركة <small>لصاحبه خالد روبع</small></span>
+        <span class="brand-name">
+          <span>طاحون الخير والبركة</span>
+          <small>لصاحبه خالد روبع</small>
+        </span>
       </a>
       <div class="nav-links">
         <a href="#services">الخدمات</a>
