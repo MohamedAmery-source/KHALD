@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khald.vercel.app/sitemap.xml
