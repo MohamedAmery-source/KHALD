@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>طاحون الخير والبركة | طحن الحبوب في ريمة</title>
+  <meta name="description" content="طاحون الخير والبركة لصاحبه خالد روبع في محافظة ريمة، مديرية السلفية. طحن البر والذرة وجميع أنواع الحبوب مع خدمة توصيل للمنازل." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #16110b;
+      --dark: #22140a;
+      --brown: #7a471f;
+      --bronze: #b77a2b;
+      --gold: #e6b75a;
+      --sand: #f7efe1;
+      --cream: #fffaf0;
+      --white: #ffffff;
+      --muted: #756858;
+      --line: rgba(34, 20, 10, 0.12);
+      --shadow: 0 30px 80px rgba(36, 21, 8, 0.18);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Tajawal", Arial, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .announcement {
+      background: #140d08;
+      color: #f7deb1;
+      font-size: 14px;
+      text-align: center;
+      padding: 10px 14px;
+      letter-spacing: 0.1px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 250, 240, 0.82);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 30px));
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--dark);
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, rgba(230,183,90,0.95), rgba(122,71,31,0.95)),
+        url("https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=300&q=80") center/cover;
+      box-shadow: 0 12px 30px rgba(122, 71, 31, 0.26);
+      border: 2px solid rgba(255,255,255,0.85);
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: -4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-weight: 800;
+      color: #3c2a1b;
+      font-size: 15px;
+    }
+
+    .nav-links a { transition: color 0.2s ease; }
+    .nav-links a:hover { color: var(--bronze); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brown), var(--dark));
+      color: white;
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 16px 35px rgba(34, 20, 10, 0.24);
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 24px 50px rgba(34, 20, 10, 0.28); }
+    .btn.light { background: var(--white); color: var(--dark); border: 1px solid var(--line); box-shadow: 0 14px 35px rgba(34,20,10,0.09); }
+    .btn.gold { background: linear-gradient(135deg, #edc36b, #a46422); color: #1b1109; }
+
+    .icon-line {
+      width: 19px;
+      height: 19px;
+      object-fit: contain;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 760px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(17,10,5,0.95) 0%, rgba(34,20,10,0.82) 42%, rgba(34,20,10,0.28) 100%),
+        url("https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=2200&q=85") center/cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 190px;
+      background: linear-gradient(0deg, var(--cream), transparent);
+      pointer-events: none;
+    }
+
+    .hero-wrap {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, calc(100% - 30px));
+      margin: auto;
+      min-height: 760px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      align-items: center;
+      gap: 42px;
+      padding: 72px 0 120px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 15px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #ffe4ae;
+      font-weight: 900;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(230,183,90,0.16);
+    }
+
+    h1 {
+      color: white;
+      font-size: clamp(44px, 8vw, 92px);
+      line-height: 1.03;
+      letter-spacing: -2.5px;
+      font-weight: 900;
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+
+    .hero-title-accent {
+      color: #f5c86d;
+      display: block;
+    }
+
+    .hero-text {
+      color: #f7e9d3;
+      font-size: clamp(18px, 2.5vw, 24px);
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-bottom: 36px;
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 720px;
+    }
+
+    .trust-item {
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 15px;
+      color: white;
+      backdrop-filter: blur(12px);
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 22px;
+      font-weight: 900;
+      color: #f7c66b;
+      margin-bottom: 2px;
+    }
+
+    .trust-item span { color: #f4dfc1; font-weight: 700; font-size: 14px; }
+
+    .hero-card {
+      background: rgba(255, 250, 240, 0.94);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: var(--radius-xl);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      transform: translateY(20px);
+    }
+
+    .hero-card-image {
+      height: 260px;
+      border-radius: 26px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .hero-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-card h2 {
+      color: var(--dark);
+      font-size: 27px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .hero-card p { color: var(--muted); font-weight: 700; }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .card-tags span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f3e2c5;
+      color: #4b2d14;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .section {
+      width: min(1180px, calc(100% - 30px));
+      margin: auto;
+      padding: 82px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.82fr 1fr;
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      color: var(--bronze);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .section h2 {
+      color: var(--dark);
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.16;
+      letter-spacing: -1px;
+      font-weight: 900;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 440px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 28px 65px rgba(36,21,8,0.14);
+      isolation: isolate;
+    }
+
+    .service-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+      z-index: -2;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.78));
+      z-index: -1;
+    }
+
+    .service-card:hover img { transform: scale(1.08); }
+
+    .service-content {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 26px;
+      color: white;
+    }
+
+    .service-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.26);
+      font-weight: 900;
+      margin-bottom: 14px;
+      backdrop-filter: blur(10px);
+    }
+
+    .service-card h3 {
+      font-size: 28px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .service-card p { color: #f5e6d1; font-weight: 600; }
+
+    .feature-band {
+      border-radius: 42px;
+      background: #1b1109;
+      color: white;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-band img {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      object-fit: cover;
+    }
+
+    .feature-content {
+      padding: clamp(30px, 5vw, 58px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .feature-content h2 {
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .feature-content p {
+      color: #ead7ba;
+      font-size: 18px;
+      margin-bottom: 22px;
+      font-weight: 600;
+    }
+
+    .process-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 10px;
+    }
+
+    .process-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 15px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .dot {
+      flex: 0 0 12px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 9px;
+      box-shadow: 0 0 0 6px rgba(230,183,90,0.12);
+    }
+
+    .process-item strong { display: block; color: white; margin-bottom: 2px; }
+    .process-item span { color: #e8d6bd; font-weight: 600; }
+
+    .grain-gallery {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr .9fr;
+      gap: 16px;
+    }
+
+    .grain-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 55px rgba(36,21,8,0.09);
+    }
+
+    .grain-card.large { grid-row: span 2; }
+    .grain-card img { width: 100%; height: 220px; object-fit: cover; }
+    .grain-card.large img { height: 420px; }
+
+    .grain-card div { padding: 20px; }
+    .grain-card h3 { font-size: 24px; color: var(--dark); margin-bottom: 4px; }
+    .grain-card p { color: var(--muted); font-weight: 700; }
+
+    .location-shell {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .address-card, .contact-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: 30px;
+      box-shadow: 0 24px 65px rgba(36,21,8,0.1);
+    }
+
+    .address-card {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,250,240,0.95)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80") center/cover;
+    }
+
+    .address-card h3, .contact-card h3 {
+      font-size: 30px;
+      color: var(--dark);
+      margin-bottom: 15px;
+    }
+
+    .address-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .address-list li {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .address-list li:last-child { border-bottom: none; }
+    .address-list strong { color: var(--dark); text-align: left; }
+
+    .phone {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 17px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--cream);
+      margin-bottom: 12px;
+      font-size: 21px;
+      font-weight: 900;
+      color: var(--dark);
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .phone:hover { transform: translateX(-4px); border-color: rgba(183,122,43,0.45); }
+    .phone span { font-size: 14px; color: var(--muted); }
+
+    .final-cta {
+      position: relative;
+      overflow: hidden;
+      border-radius: 44px;
+      padding: clamp(34px, 6vw, 68px);
+      background:
+        linear-gradient(90deg, rgba(22,17,11,0.94), rgba(122,71,31,0.8)),
+        url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1800&q=85") center/cover;
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .final-cta h2 { color: white; max-width: 720px; margin-bottom: 12px; }
+    .final-cta p { color: #f5dfbf; font-size: 19px; max-width: 780px; margin-bottom: 24px; font-weight: 600; }
+
+    footer {
+      padding: 32px 16px;
+      color: var(--muted);
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 80;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25D366;
+      box-shadow: 0 18px 42px rgba(37,211,102,.36);
+      border: 3px solid white;
+    }
+
+    .whatsapp-float svg { width: 31px; height: 31px; fill: white; }
+
+    @media (max-width: 940px) {
+      .nav-links { display: none; }
+      .hero, .hero-wrap { min-height: auto; }
+      .hero-wrap { grid-template-columns: 1fr; padding: 56px 0 110px; }
+      .hero-card { transform: none; }
+      .section-head, .feature-band, .location-shell { grid-template-columns: 1fr; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 360px; }
+      .grain-gallery { grid-template-columns: 1fr; }
+      .grain-card.large { grid-row: auto; }
+      .grain-card.large img, .grain-card img { height: 250px; }
+      .feature-band img { min-height: 300px; }
+    }
+
+    @media (max-width: 560px) {
+      .announcement { font-size: 12px; }
+      .brand small { display: none; }
+      .brand-mark { width: 42px; height: 42px; }
+      .nav .btn { display: none; }
+      .hero { background-position: 62% center; }
+      .hero::after { height: 120px; }
+      .hero-wrap { padding-top: 42px; }
+      h1 { letter-spacing: -1px; }
+      .hero-actions .btn { width: 100%; }
+      .trust-row { grid-template-columns: 1fr; }
+      .section { padding: 58px 0; }
+      .hero-card-image { height: 220px; }
+      .address-list li { flex-direction: column; gap: 2px; }
+      .phone { flex-direction: column; align-items: flex-start; font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">طحن البر والذرة وجميع أنواع الحبوب — خدمة توصيل للمنازل حسب الطلب</div>
+
+  <header>
+    <nav class="nav">
+      <a href="#home" class="brand" aria-label="طاحون الخير والبركة">
+        <span class="brand-mark"></span>
+        <span>طاحون الخير والبركة <small>لصاحبه خالد روبع</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">الخدمات</a>
+        <a href="#quality">الجودة</a>
+        <a href="#grains">الحبوب</a>
+        <a href="#location">الموقع</a>
+        <a href="#contact">التواصل</a>
+      </div>
+      <a class="btn" href="tel:777567792">اتصل الآن</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-wrap">
+        <div>
+          <div class="eyebrow">طحن حبوب باحتراف وجودة عالية</div>
+          <h1>طاحون الخير <span class="hero-title-accent">والبركة</span></h1>
+          <p class="hero-text">
+            وجهتك الموثوقة لطحن البر، الذرة، والحبوب البلدية في ريمة. نعتني بحبوبك من لحظة الاستلام حتى تصبح دقيقاً طازجاً مناسباً للخبز والأكلات اليمنية الأصيلة.
+          </p>
+          <div class="hero-actions">
+            <a class="btn gold" href="tel:777567792">طلب طحن الآن</a>
+            <a class="btn light" href="https://wa.me/967777567792" target="_blank" rel="noopener">تواصل واتساب</a>
+          </div>
+          <div class="trust-row">
+            <div class="trust-item"><strong>طحن طازج</strong><span>حسب نوع الحبوب والاستخدام</span></div>
+            <div class="trust-item"><strong>نظافة وعناية</strong><span>اهتمام بالتفاصيل قبل الطحن</span></div>
+            <div class="trust-item"><strong>توصيل منزلي</strong><span>خدمة مريحة للأهالي</span></div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-image">
+            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=900&q=85" alt="حبوب قمح طبيعية" />
+          </div>
+          <h2>دقيق أنظف، طعم أطيب، وخدمة أقرب إليك.</h2>
+          <p>نطحن الحبوب بعناية لتناسب خبز البيت، العصيد، الفتة، الكعك، وتجهيز المؤونة اليومية.</p>
+          <div class="card-tags">
+            <span>بر</span><span>ذرة</span><span>دخن</span><span>شعير</span><span>حبوب بلدية</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">خدمات الطاحون</div>
+          <h2>خدمة مصممة لاحتياج البيت اليمني.</h2>
+        </div>
+        <p>نقدم طحن عملي ومتقن للحبوب المختلفة، مع مرونة في درجة النعومة حسب رغبة العميل، وخدمة توصيل للمنازل عند الطلب.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=900&q=85" alt="حقل قمح" />
+          <div class="service-content">
+            <span class="service-number">01</span>
+            <h3>طحن البر</h3>
+            <p>طحن البر بدرجة مناسبة للخبز والاستخدام اليومي مع المحافظة على جودة الدقيق ورائحته الطبيعية.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1601593768792-9cbbee3dfe7d?auto=format&fit=crop&w=900&q=85" alt="حبوب ذرة" />
+          <div class="service-content">
+            <span class="service-number">02</span>
+            <h3>طحن الذرة</h3>
+            <p>طحن الذرة والحبوب الشعبية بدقة ونعومة تناسب الأكلات المحلية وتجهيز المؤونة.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=85" alt="خدمة توصيل" />
+          <div class="service-content">
+            <span class="service-number">03</span>
+            <h3>توصيل للمنازل</h3>
+            <p>لراحة العملاء، تتوفر خدمة توصيل للمنازل حسب الطلب والإمكانية داخل المناطق القريبة.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="quality">
+      <div class="feature-band">
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1100&q=85" alt="حبوب ومحاصيل غذائية" />
+        <div class="feature-content">
+          <div class="section-kicker">معاييرنا</div>
+          <h2>نهتم بالحبوب كما لو كانت لبيتنا.</h2>
+          <p>الطحن الجيد ليس مجرد آلة؛ هو عناية بالاستلام، ضبط للنعومة، وحرص على تقديم دقيق مناسب للأكل اليومي.</p>
+          <div class="process-list">
+            <div class="process-item"><span class="dot"></span><div><strong>استقبال واضح للطلب</strong><span>نحدد نوع الحبوب ودرجة الطحن المطلوبة قبل البدء.</span></div></div>
+            <div class="process-item"><span class="dot"></span><div><strong>طحن مناسب للاستخدام</strong><span>للخبز، العصيد، الفتة، الكعك، أو المؤونة المنزلية.</span></div></div>
+            <div class="process-item"><span class="dot"></span><div><strong>خدمة قريبة ومحترمة</strong><span>تعامل راقٍ وسرعة في إنجاز الطلبات قدر الإمكان.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="grains">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">أنواع الحبوب</div>
+          <h2>نطحن أنواعاً متعددة من الحبوب.</h2>
+        </div>
+        <p>بر، ذرة، دخن، شعير، وعدد من الحبوب البلدية حسب توفرها وحاجة العميل. يمكن طلب خلطات طحن خاصة حسب الاستخدام.</p>
+      </div>
+
+      <div class="grain-gallery">
+        <article class="grain-card large">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=85" alt="خبز ودقيق" />
+          <div><h3>للخبز اليومي</h3><p>دقيق مناسب للبيت والمأكولات اليومية.</p></div>
+        </article>
+        <article class="grain-card">
+          <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=85" alt="محاصيل حبوب" />
+          <div><h3>حبوب بلدية</h3><p>طحن الحبوب المحلية بعناية.</p></div>
+        </article>
+        <article class="grain-card">
+          <img src="https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=900&q=85" alt="حبوب متنوعة" />
+          <div><h3>خلطات خاصة</h3><p>حسب طلب العميل والاستخدام المطلوب.</p></div>
+        </article>
+        <article class="grain-card">
+          <img src="https://images.unsplash.com/photo-1604514813560-1e4f5726db65?auto=format&fit=crop&w=900&q=85" alt="أكياس حبوب" />
+          <div><h3>للمؤونة</h3><p>تجهيز طحن كميات البيت والموسم.</p></div>
+        </article>
+        <article class="grain-card">
+          <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=900&q=85" alt="ذرة" />
+          <div><h3>ذرة وبر</h3><p>أكثر الحبوب طلباً للاستخدام المحلي.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="location">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">الموقع والتواصل</div>
+          <h2>نحن قريبون منكم في ريمة.</h2>
+        </div>
+        <p>طاحون الخير والبركة لصاحبه خالد روبع، في موقع واضح يسهل الوصول إليه، مع توفر التواصل عبر الاتصال أو واتساب.</p>
+      </div>
+
+      <div class="location-shell">
+        <div class="address-card">
+          <h3>العنوان بالتفصيل</h3>
+          <ul class="address-list">
+            <li><span>المحافظة</span><strong>ريمة</strong></li>
+            <li><span>المديرية</span><strong>السلفية</strong></li>
+            <li><span>العزلة</span><strong>الدومر</strong></li>
+            <li><span>الوادي</span><strong>وادي صيحان</strong></li>
+            <li><span>المنطقة</span><strong>الكمب</strong></li>
+            <li><span>المعلم القريب</span><strong>مقابل بقالة عبدالرحمن زيد</strong></li>
+            <li><span>الوصول</span><strong>على دخلة محطة مدينة الشرق</strong></li>
+          </ul>
+        </div>
+
+        <div class="contact-card" id="contact">
+          <h3>احجز طلبك الآن</h3>
+          <p style="color: var(--muted); font-weight: 700; margin-bottom: 18px;">للطحن أو التوصيل للمنازل، تواصل معنا على أحد الأرقام التالية:</p>
+          <a class="phone" href="tel:777567792"><span>اتصال مباشر</span>777567792</a>
+          <a class="phone" href="tel:783214878"><span>اتصال مباشر</span>783214878</a>
+          <a class="btn gold" style="width: 100%; margin-top: 8px;" href="https://wa.me/967777567792" target="_blank" rel="noopener">إرسال رسالة واتساب</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="final-cta">
+        <div class="section-kicker">طاحون الخير والبركة</div>
+        <h2>دقيق طازج وخدمة تليق بأهالي ريمة.</h2>
+        <p>نرحب بكم لطحن البر والذرة وجميع أنواع الحبوب، مع عناية في العمل وسرعة في الخدمة وتوصيل للمنازل حسب الطلب.</p>
+        <a class="btn light" href="tel:777567792">اتصل وابدأ طلبك</a>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/967777567792" target="_blank" rel="noopener" aria-label="واتساب">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.39c-.29-.15-1.73-.85-2-.95-.27-.1-.47-.15-.67.15-.2.29-.77.95-.94 1.14-.17.2-.35.22-.64.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.52.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.11 3.22 5.11 4.51.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.73-.71 1.98-1.39.24-.68.24-1.27.17-1.39-.07-.13-.27-.2-.56-.35z"/><path d="M16.02 3C8.86 3 3.04 8.82 3.04 15.98c0 2.29.6 4.53 1.75 6.5L3 29l6.68-1.75a12.94 12.94 0 0 0 6.34 1.62C23.18 28.87 29 23.05 29 15.89 29 8.73 23.18 3 16.02 3zm0 23.67c-2.03 0-4.01-.54-5.75-1.56l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.74 10.74 0 0 1-1.64-5.67C5.05 9.92 9.97 5 16.02 5s10.97 4.92 10.97 10.97-4.92 10.7-10.97 10.7z"/></svg>
+  </a>
+
+  <footer>© <span id="year"></span> طاحون الخير والبركة لصاحبه خالد روبع — جميع الحقوق محفوظة</footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const animated = document.querySelectorAll(".service-card, .feature-band, .grain-card, .address-card, .contact-card, .final-cta");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.animate([
+            { opacity: 0, transform: "translateY(36px)" },
+            { opacity: 1, transform: "translateY(0)" }
+          ], { duration: 760, easing: "cubic-bezier(.2,.8,.2,1)", fill: "forwards" });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .15 });
+
+    animated.forEach((item) => {
+      item.style.opacity = "0";
+      observer.observe(item);
+    });
+  </script>
+</body>
+</html>
